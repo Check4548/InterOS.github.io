@@ -1,26 +1,24 @@
-// Logic Aplikasi Kalkulator
+// Buat element style
 const style = document.createElement('style');
 style.textContent = `
-    .calc-btn { width: 40px; height: 40px; margin: 2px; }
-    #display { width: 100%; margin-bottom: 10px; text-align: right; }
+    .app-notepad .window-body {
+        background: #fffbe6; /* Warna kertas kuning */
+        padding: 0;
+    }
+    .app-notepad textarea {
+        width: 100%;
+        height: 100%;
+        border: none;
+        resize: none;
+        background: transparent;
+        font-family: 'Courier New', monospace;
+        padding: 10px;
+        outline: none;
+    }
 `;
-container.appendChild(style);
+document.head.appendChild(style);
 
-const html = `
-    <input type="text" id="display" disabled value="0">
-    <br>
-    <button class="calc-btn" onclick="addNum(1)">1</button>
-    <button class="calc-btn" onclick="addNum(2)">2</button>
-    <button class="calc-btn" onclick="addNum(3)">3</button>
-    <button class="calc-btn" onclick="alert('Hasil: ' + document.getElementById('display').value)">=</button>
-    <button class="calc-btn" onclick="document.getElementById('display').value='0'">C</button>
+// Render HTML
+container.innerHTML = `
+    <textarea placeholder="Tulis catatan di sini..."></textarea>
 `;
-
-container.innerHTML = html;
-
-// Fungsi harus ditaruh di scope window agar tombol onclick bisa akses
-window.addNum = (n) => {
-    const disp = document.getElementById('display');
-    if(disp.value === '0') disp.value = n;
-    else disp.value += n;
-};
