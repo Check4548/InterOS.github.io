@@ -1,0 +1,30 @@
+/* Styling khusus untuk window Kalkulator */
+.app-kalkulator {
+    background: #f4f4f9;
+    border: 2px solid #3498db;
+}
+
+/* Styling header khusus kalkulator */
+.app-kalkulator .window-header {
+    background: #3498db;
+    color: white;
+}
+
+/* Styling isi dalam kalkulator */
+.app-kalkulator .window-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.app-kalkulator button {
+    padding: 15px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.app-kalkulator button:hover {
+    background: #ddd;
+}
